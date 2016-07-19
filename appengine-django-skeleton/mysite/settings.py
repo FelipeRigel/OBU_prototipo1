@@ -96,7 +96,7 @@ if os.getenv('SERVER_SOFTWARE', '').startswith('Google App Engine'):
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.mysql',
-            'HOST': '/cloudsql/obu-prototipo-1:obuinstance',
+            'HOST': '/cloudsql/obu-prototipo:obu-sql',
             'NAME': 'obudb',
             'USER': 'root',
         }
@@ -106,9 +106,9 @@ else:
         'default': {
             'ENGINE': 'django.db.backends.mysql',
             'NAME': 'obudb',
-            'USER': 'pythonapp',
+            'USER': 'obu-user',
             'PASSWORD': '123',
-            'HOST': '173.194.247.217',
+            'HOST': '173.194.106.78',
             'PORT': '3306',
         }
     }
