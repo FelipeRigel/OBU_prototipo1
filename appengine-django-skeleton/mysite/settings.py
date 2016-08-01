@@ -95,7 +95,7 @@ if os.getenv('SERVER_SOFTWARE', '').startswith('Google App Engine'):
     # Running on production App Engine, so use a Google Cloud SQL database.
     DATABASES = {
         'default': {
-            'ENGINE': 'django.db.backends.mysql',ggsutil rsync -R static/ gs:gsutil rsync -R static/ gs:sutil rsync -R static/ gs:
+            'ENGINE': 'django.db.backends.mysql',
             'HOST': '/cloudsql/django-obu:obu-sql',
             'NAME': 'obudb',
             'USER': 'root',
@@ -132,4 +132,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_ROOT='static'
-STATIC_URL = 'http://storage.googleapis.com/obu-segment/static/'
+STATIC_URL = 'http://storage.googleapis.com/obuseg/static/'
