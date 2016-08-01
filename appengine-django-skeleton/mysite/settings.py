@@ -132,4 +132,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_ROOT='static'
-STATIC_URL = 'http://storage.googleapis.com/django-obu.appspot.com/static/'
+STATIC_URL = 'http://storage.googleapis.com/obu-segment/static/'
