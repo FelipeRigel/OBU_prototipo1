@@ -1,4 +1,4 @@
-# Copyright 2015 Google Inc. All rights reserved.
+# Copyright 2015 Google Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,41 +14,15 @@
 
 from django.db import models
 
-#class Question(models.Model):
-#    question_text = models.CharField(max_length=200)
-#    pub_date = models.DateTimeField('date published')
-#
-#
-#class Choice(models.Model):
-#    question = models.ForeignKey(Question)
-#    choice_text = models.CharField(max_length=200)
-#    votes = models.IntegerField(default=0)
-#
-#class Author(models.Model):
-#    first_name = models.CharField(max_length=30)
-#    last_name = models.CharField(max_length=40)
-#    email = models.EmailField()
-#
 
-class Vehiculo(models.Model):
-	id = models.IntegerField(primary_key=True, null=False) # Hash function de la matricula
-	nivel_tecn = models.IntegerField(null=False) # Nivel de tecnificaciOn
-	sensor_1 = models.FloatField(null=False) 
-	sensor_2 = models.FloatField(null=False)
-	sensor_3 = models.FloatField(null=False)
-	inf_auto = models.CharField(max_length=200) # InformaciOn del vehiculo
+class Question(models.Model):
+    question_text = models.CharField(max_length=200)
+    pub_date = models.DateTimeField('date published')
 
-class Vanet(models.Model):
-	id_vehiculo = models.ForeignKey(Vehiculo) # Hash function de la matricula del vehiculo
-	velocidad = models.FloatField(null=False) # Velocidad del vehiculo
-	dist_e = models.FloatField(null=False) # Distancia euclidiana
-	dist_a = models.FloatField(null=False) # Distancia acumulada
-	p = models.BooleanField(null=False) # Nodo puntero
-	v = models.BooleanField(null=False) # Nodo hoja
-	id_p = models.IntegerField(null=False) # Identificador autoincrementable del puntero
-	id = models.AutoField(primary_key=True, null=False) # Id de la VANET
 
-class Vecindad(models.Model):
-	id_vecindad = models.AutoField(primary_key=True, null=False)
-	id_vehicul = models.ForeignKey(Vehiculo) 
+class Choice(models.Model):
+    question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    choice_text = models.CharField(max_length=200)
+    votes = models.IntegerField(default=0)
 
+# Create your models here.
