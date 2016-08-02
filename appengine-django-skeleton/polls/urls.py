@@ -13,9 +13,22 @@
 # limitations under the License.
 
 from django.conf.urls import url
+from django.contrib import admin
+
+from django.conf.urls import  include
+
+from django.conf import settings
+from django.contrib import admin
 
 from . import views
-
+from polls.views import *
 urlpatterns = [
     url(r'^$', views.index, name='index'),
+    url(r'^admin/', include(admin.site.urls)),
+    url(r'^prueba/$', prueba),
+    #url(r'^veh/$', vehiculo_list),
+    #url(r'^time/$', current_datetime),
+    url(r'^post/$', form_send),
+    url(r'^param_get/(?P<username>\w{1,50})/$', param_get),
+    url(r'^param_post/$', complete_decode)
 ]

@@ -14,6 +14,9 @@
 
 from django.contrib import admin
 
-from .models import Question
+import models
 
-admin.site.register(Question)
+admin.site.register(models.Vehiculo)
+admin.site.register(models.Vanet)
+admin.site.register(models.Vecindad)
+

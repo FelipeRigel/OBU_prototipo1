@@ -56,7 +56,7 @@ ROOT_URLCONF = 'mysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -78,10 +78,11 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': '<your-database-name>',
-        'USER': '<your-database-user>',
-        'PASSWORD': '<your-database-password>',
-        'HOST': '<your-database-host>',
+        'NAME': 'obudb',
+        'USER': 'obu-user',
+        'PASSWORD': '123',
+        'HOST': '173.194.224.184',
+        'PORT': '3306',
         'PORT': '3306',
     }
 }
@@ -107,7 +108,8 @@ USE_TZ = True
 # Fill in your cloud bucket and switch which one of the following 2 lines
 # is commented to serve static content from GCS
 # STATIC_URL = 'https://storage.googleapis.com/<your-cloud-bucket>/static/'
-STATIC_URL = '/static/'
+STATIC_URL = 'http://storage.googleapis.com/obutry/static/'
+
 # [END staticurl]
 
 STATIC_ROOT = 'static/'
