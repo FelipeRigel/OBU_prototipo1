@@ -26,7 +26,7 @@ def prueba(request):
 	a  = '{"name": "John Smith", "hometown": "New York"}'
 	dec_a=json.loads(a)
 	return HttpResponse(dec_a['name'])
-
+#DECODE JSON
 def complete_decode(request):
 	data = request.POST.get('data')
 	#your_string = '-'.join([str(message)])
@@ -82,9 +82,9 @@ def param_post(request):
 	#your_string += '-'.join([str(param)])
 
 	#a = param
-	username = request.POST.get('username')
+	data = request.POST.get('data')
 	#your_string = '-'.join([str(message)])
-	return HttpResponse("MSN: " + username )
+	return HttpResponse("MSN: " + data )
 
 
 
