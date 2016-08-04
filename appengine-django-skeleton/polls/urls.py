@@ -30,5 +30,5 @@ urlpatterns = [
     #url(r'^time/$', current_datetime),
     url(r'^post/$', form_send),
     url(r'^param_get/(?P<username>\w{1,50})/$', param_get),
-    url(r'^param_post/$', param_post)
+    url(r'^param_post/$', complete_decode)
 ]
